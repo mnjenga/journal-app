@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">My Journal</string>
+    <string name="title_text">My Journal</string>
+    <string name="title_activity_create_journal">Create Journal</string>
+    <string name="title_activity_main">All Journal Entries</string>
+
+    <!-- Strings for MainActivity Mood -->
+    <string name="mood_1">1</string>
+    <string name="mood_2">2</string>
+    <string name="mood_3">3</string>
+    <string name="mood_4">2</string>
+    <string name="mood_5">3</string>
+    <string name="edit_journal">Write your Journal&#8230;</string>
+    <string name="edit_title">Add a title&#8230;</string>
+    <string name="mood_string">Your Mood</string>
+    <string name="add_button">Save</string>
+    <string name="update_button">Update</string>
+
+    <!-- Sign-in status messages -->
+    <string name="signed_in_fmt">Signed in as: %s</string>
+    <string name="signed_in">Signed in</string>
+    <string name="signing_in">Signing in…</string>
+    <string name="signed_out">Signed out</string>
+    <string name="signed_in_err">"Error: please check logs."</string>
+    <string name="error_null_person">
+        Error: Plus.PeopleApi.getCurrentPerson returned null. Ensure that the Google+ API is
+        enabled for your project, you have a properly configured google-services.json file
+        and that your device has an internet connection.
+    </string>
+    <string name="loading">Loading…</string>
+    <string name="auth_code_fmt">Auth Code: %s</string>
+    <string name="id_token_fmt">ID Token: %s</string>
+
+    <!-- Google Play Services error for Toast -->
+    <string name="play_services_error_fmt">Google Play Services Error: %i</string>
+
+    <!-- Button labels -->
+    <string name="sign_out">Sign Out</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="refresh_token">Get Fresh Token</string>
+
+    <!-- Menu labels -->
+    <string name="log_out">Sign Out</string>
+    <string name="dis_connect">Disconnect</string>
+    <string name="logged_in">Get Fresh Token</string>
+
+
+
+    <!-- Rationale for asking for Contacts -->
+    <string name="contacts_permission_rationale">Contacts access is needed in order to retrieve your email address.</string>
+
+    <!-- Activity Names and Descriptions -->
+    <string name="name_sign_in_activity">SignInActivity</string>
+    <string name="desc_sign_in_activity">Signing in, signing out, and revoking access.</string>
+
+    <string name="name_id_token_activity">IdTokenActivity</string>
+    <string name="desc_id_token_activity">Retrieving an ID Token for the user.</string>
+
+    <!-- Messages for the Rest API activity -->
+    <string name="connections_fmt">Connections: %1$s</string>
+    <string name="msg_contacts_failed">Get contacts failed.</string>
+
+</resources>

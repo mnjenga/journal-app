@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_grey_500">#607D8B</color>
+    <color name="blue_grey_600">#546E7A</color>
+    <color name="blue_grey_700">#455A64</color>
+    <color name="blue_grey_800">#37474F</color>
+    <color name="blue_grey_900">#263238</color>
+    <!-- colors for general appearance -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryLight">#C5CAE9</color>
+    <color name="colorAccent">#303F9F</color>
+
+    <!-- colors Journal mood selection -->
+    <color name="joy">#FDC62F</color>
+    <color name="sad">#3D97D6</color>
+    <color name="anger">#FA3824</color>
+    <color name="fear">#DAB6ED</color>
+    <color name="disgust">#73BE4A</color>
+</resources>
