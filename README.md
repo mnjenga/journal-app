@@ -12,6 +12,10 @@ The app supports SdkVersion 18 - SdkVersion 27 (Jellybean - Oreo)
 Getting Started
 ---------------
 
-Chrone the library
+Chrone the library and download. 
+
+Import the project into android Studio
+
+The project will sync and be ready to be run on your emulator or device
 
 
