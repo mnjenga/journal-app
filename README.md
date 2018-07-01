@@ -12,3 +12,14 @@ Chrone the library and download.
 Import the project into android Studio
 
 The project will sync and be ready to be run on your emulator or device
+
+## Dependancies
+
+Dependanies are avaible at https://github.com/mnjenga/journal-app/blob/master/app-legacy/build.gradle
+
+## Credit
+Image credit to Disney Pixar https://movies.disney.com/inside-out for the theme and animated gifs
+
+Code snippets from google signin examples and Udacity Google Africa Challenge lessons
+
+Amazing Ad-Group-17 for the support and Comraderie
