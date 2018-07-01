@@ -58,5 +58,6 @@ dependencies {
 
     // FireBase
     implementation 'com.google.firebase:firebase-core:16.0.1'
+    apply plugin: 'com.android.application'
     apply plugin: 'com.google.gms.google-services'
 }

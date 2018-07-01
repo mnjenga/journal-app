@@ -2,6 +2,7 @@ package com.moses.njenga.aclchallenge.journal;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +13,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.moses.njenga.aclchallenge.journal.database.AppDatabase;
@@ -48,11 +51,7 @@ public class MainActivity extends AppCompatActivity implements JournalAdapter.It
         DividerItemDecoration decoration = new DividerItemDecoration(getApplicationContext(), VERTICAL);
         mRecyclerView.addItemDecoration(decoration);
 
-        /*
-         Add a touch helper to the RecyclerView to recognize when a user swipes to delete an item.
-         An ItemTouchHelper enables touch behavior (like swipe and move) on each ViewHolder,
-         and uses callbacks to signal when a user is performing these actions.
-         */
+        
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
             public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
@@ -73,11 +72,7 @@ public class MainActivity extends AppCompatActivity implements JournalAdapter.It
             }
         }).attachToRecyclerView(mRecyclerView);
 
-        /*
-         Set the Floating Action Button (FAB) to its corresponding View.
-         Attach an OnClickListener to it, so that when it's clicked, a new intent will be created
-         to launch the AddTaskActivity.
-         */
+
         FloatingActionButton fabButton = findViewById(R.id.fab);
 
         fabButton.setOnClickListener(new View.OnClickListener() {
@@ -110,5 +105,35 @@ public class MainActivity extends AppCompatActivity implements JournalAdapter.It
         Intent intent = new Intent(MainActivity.this, CreateJournalActivity.class);
         intent.putExtra(CreateJournalActivity.EXTRA_JOURNAL_ID, itemId);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if ( id== R.id.action_logout) {
+            Context context = MainActivity.this;
+            Intent i = new Intent(MainActivity.this, SignInActivity.class);
+            i.putExtra("methodSign",true);
+            startActivity(i);
+            return true;
+        }
+
+        else if ( id== R.id.action_disconnect) {
+            Context context = MainActivity.this;
+            Intent i = new Intent(MainActivity.this, SignInActivity.class);
+            i.putExtra("methodSign",true);
+            startActivity(i);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

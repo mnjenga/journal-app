@@ -36,7 +36,7 @@
 
     <!-- Button labels -->
     <string name="sign_out">Sign Out</string>
-    <string name="disconnect">Disconnect</string>
+    <string name="disconnect">Go to Journal</string>
     <string name="refresh_token">Get Fresh Token</string>
 
     <!-- Menu labels -->

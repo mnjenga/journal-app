@@ -27,6 +27,8 @@ public class SignInActivity extends AppCompatActivity implements
 
     private GoogleSignInClient mGoogleSignInClient;
     private TextView mStatusTextView;
+    Boolean isSignOut;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,7 @@ public class SignInActivity extends AppCompatActivity implements
         // Button listeners
         findViewById(R.id.sign_in_button).setOnClickListener(this);
         findViewById(R.id.sign_out_button).setOnClickListener(this);
-        findViewById(R.id.disconnect_button).setOnClickListener(this);
+        findViewById(R.id.journal_button).setOnClickListener(this);
 
         // [START configure_signin]
 
@@ -57,6 +59,8 @@ public class SignInActivity extends AppCompatActivity implements
 
     }
 
+
+
     @Override
     public void onStart() {
         super.onStart();
@@ -67,6 +71,17 @@ public class SignInActivity extends AppCompatActivity implements
         updateUI(account);
 
     }
+
+    @Override
+    public void onNewIntent(Intent intent){
+        super.onNewIntent(intent);
+        setIntent(intent);
+        intent = getIntent();
+        isSignOut= intent.getExtras().getBoolean("methodSign");
+        if (isSignOut) {
+
+            signOut();
+        }}
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -119,16 +134,9 @@ public class SignInActivity extends AppCompatActivity implements
     // [END signOut]
 
     // [START revokeAccess]
-    private void revokeAccess() {
-        mGoogleSignInClient.revokeAccess()
-                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        // [START_EXCLUDE]
-                        updateUI(null);
-                        // [END_EXCLUDE]
-                    }
-                });
+    private void goJournal() {
+        Intent i = new Intent(SignInActivity.this, MainActivity.class);
+        startActivity(i);
     }
     // [END revokeAccess]
 
@@ -138,9 +146,7 @@ public class SignInActivity extends AppCompatActivity implements
 
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
             findViewById(R.id.sign_out_and_disconnect).setVisibility(View.VISIBLE);
-            Intent i = new Intent(SignInActivity.this, MainActivity.class);
-            startActivity(i);
-            finish();
+
         } else {
             mStatusTextView.setText(R.string.signed_out);
 
@@ -158,8 +164,8 @@ public class SignInActivity extends AppCompatActivity implements
             case R.id.sign_out_button:
                 signOut();
                 break;
-            case R.id.disconnect_button:
-                revokeAccess();
+            case R.id.journal_button:
+                goJournal();
                 break;
         }
     }
